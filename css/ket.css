@@ -264,11 +264,14 @@ header nav .icon:hover+ul li a:hover {
 
 /* Start Landing */
 .landing {
-    height: calc(90vh - 87.25px);
-    background-image: url("../imgs/Background.jpg");
+    min-height: calc(90vh - 87.25px);
+    background-image: url(../imgs/Background.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .landing .container {
