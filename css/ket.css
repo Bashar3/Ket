@@ -29,6 +29,18 @@ body {
     letter-spacing: 1px;
 }
 
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 280px) {
+    body {
+        font-size: 12px;
+    }
+}
+
 /* Container  */
 .container {
     padding-right: 15px;
@@ -78,12 +90,12 @@ i {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
 }
 
 .button {
-    font-size: 15px;
+    font-size: 0.8823em;
     display: block;
     width: fit-content;
     border: 1px solid white;
@@ -100,7 +112,7 @@ i {
 }
 
 .heading h2 {
-    font-size: 40px;
+    font-size: 2.5em;
     margin-bottom: 40px;
     position: relative;
     text-transform: capitalize;
@@ -118,7 +130,7 @@ i {
 }
 
 .heading p {
-    font-size: 15px;
+    font-size: 0.8823em;
     color: var(--text);
     max-width: 500px;
     margin: auto auto 50px;
@@ -137,7 +149,14 @@ header .container {
     position: relative;
 }
 
-/* Header icon For Small Screen  */
+header nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
 header nav .icon {
     width: 30px;
     display: flex;
@@ -161,18 +180,10 @@ header nav .icon:hover span:nth-child(2) {
     width: 100%;
 }
 
-/* Header Logo */
 header .logo img {
     max-width: 120px;
 }
 
-/* Header Links */
-header nav {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    align-items: center;
-}
 
 header nav ul {
     display: flex;
@@ -185,7 +196,7 @@ header nav ul li a {
     color: #333;
     display: block;
     position: relative;
-    font-size: 15px;
+    font-size: 0.8823em;
     transition: var(--transition);
     text-align: center;
 }
@@ -202,7 +213,6 @@ header nav ul li a::before {
     transition: var(--transition);
 }
 
-/* Hoverr Effect  */
 header nav ul li a:hover {
     color: var(--main-color);
 }
@@ -211,7 +221,6 @@ header nav ul li a:hover::before {
     width: 50px;
 }
 
-/* Acive  */
 header nav ul li .active {
     color: var(--main-color);
 }
@@ -229,28 +238,23 @@ header nav ul li .active::before {
 }
 
 /* Responsive */
-
-/* icon Hover ul Show */
-header nav .icon:hover+ul {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: white;
-    top: 100%;
-    width: 200px;
-}
-
-header nav .icon:hover+ul li:not(:last-child) {
-    border-bottom: 1px solid #ddd;
-}
-
-header nav .icon:hover+ul li a:hover {
-    padding-left: 50px;
-}
-
 @media (max-width: 767px) {
     header nav ul {
         display: none;
+    }
+
+    header nav .wrapper:hover ul {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
+
+    header nav .wrapper:hover ul li:not(:last-child) {
+        border-bottom: 1px solid #ddd;
     }
 }
 
@@ -264,14 +268,11 @@ header nav .icon:hover+ul li a:hover {
 
 /* Start Landing */
 .landing {
-    min-height: calc(90vh - 87.25px);
-    background-image: url(../imgs/Background.jpg);
+    height: calc(90vh - 87.25px);
+    background-image: url("../imgs/Background.jpg");
     background-position: center;
     background-size: cover;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .landing .container {
@@ -301,7 +302,7 @@ header nav .icon:hover+ul li a:hover {
 }
 
 .landing .content h1 {
-    font-size: 60px;
+    font-size: 3.5em;
     font-weight: normal;
     text-transform: uppercase;
 }
@@ -312,7 +313,6 @@ header nav .icon:hover+ul li a:hover {
     margin: auto;
 }
 
-/* Hover Effect  */
 .landing .content a:hover {
     color: var(--main-color);
 }
@@ -333,13 +333,6 @@ header nav .icon:hover+ul li a:hover {
     width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-    .landing .content h1 {
-        font-size: 42px;
-    }
-}
-
 /* End Landing */
 
 /* Start Services  */
@@ -349,15 +342,15 @@ header nav .icon:hover+ul li a:hover {
     text-align: center;
 }
 
-.services .container h2 {
-    font-size: 20px;
+.services .container h3 {
+    font-size: 1.25em;
     font-weight: normal;
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative;
 }
 
-.services .container h2::after {
+.services .container h3::after {
     content: "";
     width: 25%;
     height: 2px;
@@ -370,7 +363,7 @@ header nav .icon:hover+ul li a:hover {
 
 .services .container p {
     color: var(--text);
-    font-size: 15px;
+    font-size: 0.8823em;
 }
 
 /* End Services  */
@@ -392,7 +385,7 @@ header nav .icon:hover+ul li a:hover {
 
 .service-1 .shuffle p {
     border: 1px solid;
-    font-size: 15px;
+    font-size: 0.8823em;
     width: 500px;
     height: 40px;
     display: flex;
@@ -433,12 +426,12 @@ header nav .icon:hover+ul li a:hover {
 
 /* service-1 Text */
 .service-1 .content .text h2 {
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: normal;
 }
 
 .service-1 .content .text p {
-    font-size: 15px;
+    font-size: 0.8823em;
     color: var(--text);
     margin: 25px 0;
     line-height: var(--line-height);
@@ -540,15 +533,14 @@ header nav .icon:hover+ul li a:hover {
 
 .pahses .phase {
     display: flex;
-    column-gap: 60px;
     justify-content: center;
-    row-gap: 20px;
+    gap: 20px 60px;
 }
 
 
 /* Column 1 */
 .pahses .phase .col-1 {
-    flex-basis: 25%;
+    flex-basis: 30%;
     position: relative;
     border-right: 2px solid #c3d0d8;
 }
@@ -571,25 +563,24 @@ header nav .icon:hover+ul li a:hover {
 }
 
 .pahses .phase .col-1 h2 {
-    font-size: 20px;
+    font-size: 1.25em;
     color: var(--main-color);
 }
 
 .pahses .phase .col-1 p {
     color: var(--text);
-    font-size: 15px;
+    font-size: 0.8823em;
     margin-top: 10px;
     opacity: 0.7;
 }
 
 /* Column 2 */
 .pahses .phase .col-2 {
-    flex-basis: 70%;
     margin-bottom: 60px;
 }
 
 .pahses .phase .col-2 h2 {
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: normal;
 }
 
@@ -597,19 +588,20 @@ header nav .icon:hover+ul li a:hover {
     margin: 20px 0;
     color: var(--text);
     max-width: 600px;
-    font-size: 13px;
+    font-size: 0.8125em;
     line-height: var(--line-height);
 }
 
 .pahses .phase .col-2 a {
     color: var(--main-color);
-    font-size: 17px;
+    font-size: 1.0625em;
 }
 
 /* Responsive */
 @media (max-width: 767px) {
     .pahses .phase {
         flex-direction: column;
+        text-align: center;
     }
 
     .pahses .phase .col-1::after {
@@ -677,7 +669,7 @@ header nav .icon:hover+ul li a:hover {
 
 .portfolio .container .boxes .box .caption a {
     display: block;
-    font-size: 20px;
+    font-size: 1.25em;
     text-transform: uppercase;
     color: black;
     position: relative;
@@ -698,7 +690,7 @@ header nav .icon:hover+ul li a:hover {
 .portfolio .container .boxes .box .caption p {
     color: var(--text);
     line-height: var(--line-height);
-    font-size: 15px;
+    font-size: 0.8823em;
 }
 
 /* Hover Effect */
@@ -708,11 +700,11 @@ header nav .icon:hover+ul li a:hover {
     width: 100%;
     height: calc(100% - 5px);
     position: absolute;
-    opacity: 0.7;
     top: 0;
     left: 0;
-    display: none;
     cursor: pointer;
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .portfolio .container .box .image::after {
@@ -724,14 +716,18 @@ header nav .icon:hover+ul li a:hover {
     transform: translate(50%, 50%);
     z-index: 2;
     font-weight: 900;
-    font-size: 50px;
+    font-size: 3.125em;
     color: white;
-    display: none;
+    opacity: 0;
+    transition: var(--transition);
 }
 
-.portfolio .box .image:hover::after,
 .portfolio .box .image:hover::before {
-    display: block;
+    opacity: 0.7;
+}
+
+.portfolio .box .image:hover::after {
+    opacity: 1;
 }
 
 /* End Portfolio */
@@ -769,7 +765,7 @@ header nav .icon:hover+ul li a:hover {
 }
 
 .video .text h2 {
-    font-size: 40px;
+    font-size: 2.5em;
     position: relative;
 }
 
@@ -791,7 +787,7 @@ header nav .icon:hover+ul li a:hover {
 }
 
 .video .text .more a {
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .video .text .more a,
@@ -799,13 +795,6 @@ header nav .icon:hover+ul li a:hover {
     color: white;
     margin-top: 15px;
     cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-    .video .text h2 {
-        font-size: 30px;
-    }
 }
 
 /* End Video */
@@ -827,12 +816,12 @@ header nav .icon:hover+ul li a:hover {
 .stats .container .stat h2 {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 40px;
+    font-size: 2.5em;
 }
 
 .stats .container .stat p {
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 0.8125em;
 }
 
 /* End Stats */
@@ -866,13 +855,13 @@ header nav .icon:hover+ul li a:hover {
 }
 
 .testimonials .image .name h2 {
-    font-size: 20px;
+    font-size: 1.25em;
     text-transform: capitalize;
 }
 
 .testimonials .image .name p {
     text-transform: capitalize;
-    font-size: 13px;
+    font-size: 0.8125em;
     color: var(--main-color);
 }
 
@@ -942,7 +931,7 @@ header nav .icon:hover+ul li a:hover {
 
 .about .text h2 {
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 1.25em;
     margin-bottom: 30px;
 }
 
@@ -951,7 +940,7 @@ header nav .icon:hover+ul li a:hover {
     margin-top: 15px;
     margin-bottom: 15px;
     color: var(--text);
-    font-size: 13px;
+    font-size: 0.8125em;
 }
 
 .about .text {
@@ -1014,11 +1003,11 @@ header nav .icon:hover+ul li a:hover {
 
 .quotes .container .text q {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .quotes .container .text p {
-    font-size: 13px;
+    font-size: 0.8125em;
     margin-top: 5px;
 }
 
@@ -1055,7 +1044,7 @@ header nav .icon:hover+ul li a:hover {
 
 .news .new .number h2 {
     color: var(--main-color);
-    font-size: 67px;
+    font-size: 4.1875em;
     font-weight: normal;
     margin: 0;
 }
@@ -1066,7 +1055,7 @@ header nav .icon:hover+ul li a:hover {
 
 .news .new p {
     color: #929ba0;
-    font-size: 13px;
+    font-size: 0.8125em;
     max-width: 600px;
 }
 
@@ -1140,6 +1129,13 @@ header nav .icon:hover+ul li a:hover {
     line-height: var(--line-height);
 }
 
+/* Responsive */
+@media (max-width: 767px) {
+    .service-3 img {
+        display: none;
+    }
+}
+
 /* End Moden-Desgin */
 
 /* Start Clients */
@@ -1157,7 +1153,7 @@ header nav .icon:hover+ul li a:hover {
 
 /* Text  */
 .clients .content .box h3 {
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: normal;
     position: relative;
 }
@@ -1183,7 +1179,7 @@ header nav .icon:hover+ul li a:hover {
 .clients .content q {
     max-width: 300px;
     color: #929ba0;
-    font-size: 15px;
+    font-size: 0.8823em;
 }
 
 /* End Clients */
@@ -1217,7 +1213,7 @@ header nav .icon:hover+ul li a:hover {
 }
 
 .subscribe .container p {
-    font-size: 20px;
+    font-size: 1.25em;
     color: white;
     margin-bottom: 20px;
     letter-spacing: 1px;
@@ -1285,6 +1281,7 @@ header nav .icon:hover+ul li a:hover {
 
 .contact form input {
     width: 45%;
+    display: block;
 }
 
 .contact form textarea {
@@ -1384,7 +1381,7 @@ footer p {
     color: #d6d6dd;
     font-weight: normal;
     line-height: var(--line-height);
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 footer a {
@@ -1401,7 +1398,7 @@ footer i {
 }
 
 footer i:hover {
-    font-size: 25px;
+    font-size: 1.5625em;
 }
 
 /* End Footer */
